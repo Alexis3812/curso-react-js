@@ -1,32 +1,61 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Item from "../Item/Item";
+import './ItemListContainer.css';
 
-export const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
-    const [errors, setErrors] = useState(null);
-    const [loading, setLoading] = useState(true);
+const ItemListContainer = ({ greeting }) => {
+  const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  
+  const { idCategory } = useParams();
 
-    useEffect(() => {
-        fetch("/data/products.json")
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error("Error al cargar los productos");
-            }
+  useEffect(() => {
+    setLoading(true);
+    
+    fetch('/data/products.json')
+      .then((response) => response.json())
+      .then((data) => {
+        if (idCategory) {
+        
+          const productosFiltrados = data.filter(
+            (prod) => prod.categoria.toLowerCase() === idCategory.toLowerCase()
+          );
+          setProductos(productosFiltrados);
+        } else {
+          
+          setProductos(data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error al cargar los productos:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [idCategory]); 
 
-            return res.json();
-        })
-        .then((data) => setProducts(data))
-        .catch((error) => setErrors(error.message))
-        .finally(() => setLoading(false));
-
-    }, []);
-
-    if (loading) return <p>Cargando...</p>;
-    if (errors) return <p>{errors}</p>;
-
-    return (
-        <section>
-            <h1>Prodcutos</h1>
-            <ItemList products={products} />
-        </section>
-    );
+  return (
+    <div className="container">
+      <h2 className="greeting-title">
+        {greeting || `Categoría: ${idCategory}`}
+      </h2>
+      
+      {loading ? (
+        <h3 className="loading-text">Cargando catálogo...</h3>
+      ) : (
+        productos.length === 0 ? (
+          <h3 className="loading-text">No hay productos en esta categoría.</h3>
+        ) : (
+          <div className="item-list">
+            {productos.map((prod) => (
+              <Item key={prod.id} producto={prod} />
+            ))}
+          </div>
+        )
+      )}
+    </div>
+  );
 };
+
+export default ItemListContainer;

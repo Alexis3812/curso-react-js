@@ -1,50 +1,34 @@
 [
-  {
-    "id": 1,
-    "name": "Zapatito Bebé Azul",
-    "description": "Zapatilla tipo lona en azul vibrante con puntera reforzada y cordones elásticos. Ideales para gateo y sus primeros pasos con total seguridad.",
-    "price": 12500,
-    "image": "/img/footware/bebe-azul.jpg",
-    "category": "infantil"
+  { 
+    "id": 1, 
+    "nombre": "Elden Ring", 
+    "precio": 78000,
+    "categoria": "RPG", 
+    "stock": 15, 
+    "img": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png" 
   },
-  {
-    "id": 2,
-    "name": "Zapatito Bebé Rosa",
-    "description": "Zapatos estilo Guillermina en color fucsia con detalle de moño. Suela blanda y flexible, perfecta para proteger los pies de tu bebé con delicadeza.",
-    "price": 12500,
-    "image": "/img/footware/bebe-rosa.jpg",
-    "category": "infantil"
+  { 
+    "id": 2, 
+    "nombre": "Resident Evil 2 Remake", 
+    "precio": 20000, 
+    "categoria": "Survival Horror", 
+    "stock": 8, 
+    "img": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/883710/header.jpg"
   },
-  {
-    "id": 3,
-    "name": "Sandalia Dama Verano",
-    "description": "Sandalias de tacón alto en cuero texturizado rosa neón. Diseño de plataforma ancha que combina tendencia y estabilidad para salidas nocturnas.",
-    "price": 28900,
-    "image": "/img/footware/sandalia.jpg",
-    "category": "dama"
+  { 
+    "id": 3, 
+    "nombre": "Valorant - 2050 VP", 
+    "precio": 32750,
+    "categoria": "Shooter", 
+    "stock": 100, 
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_pink_color_version.svg" 
   },
-  {
-    "id": 4,
-    "name": "Zapato Dama Elegante",
-    "description": "Stilettos clásicos en cuero charolado color borravino. Punta fina y tacón aguja para un look sofisticado de oficina o eventos de gala.",
-    "price": 35000,
-    "image": "/img/footware/zapato-dama.jpg",
-    "category": "dama"
-  },
-  {
-    "id": 5,
-    "name": "Zapato Hombre Oxford",
-    "description": "Zapatos Oxford de cuero genuino color suela con acabado artesanal. Un clásico atemporal con cordones encerados para el hombre moderno.",
-    "price": 42000,
-    "image": "/img/footware/zapato-hombre.jpg",
-    "category": "hombre"
-  },
-  {
-    "id": 6,
-    "name": "Zapato Hombre Marrón Premium",
-    "description": "Calzado de vestir en cuero mate color chocolate. Incluye detalles de costura a mano y suela de alta durabilidad, ideales para uso intensivo formal.",
-    "price": 45500,
-    "image": "/img/footware/zapato-hombre-2.jpg",
-    "category": "hombre"
+  { 
+    "id": 4, 
+    "nombre": "Mouse Logitech G203", 
+    "precio": 25000, 
+    "categoria": "Periféricos", 
+    "stock": 5, 
+    "img": "https://resource.logitechg.com/w_386,ar_1.0,c_limit,f_auto,q_auto,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/g203/g203-gallery-1.png?v=1" 
   }
 ]

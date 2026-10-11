@@ -1,15 +1,15 @@
-import "./ItemList.css";
+import './Item.css';
 
-export const Item = ( {products} ) => {
-    if (!products.length) {
-        return <p>No hay productos</p>;
-    }
-
-    return (
-        <div className="products-container">
-            {products.map((product) => (
-                <Item key={product.id} {...product} />
-            ))}
-        </div>
-    );
+const Item = ({ producto }) => {
+  return (
+    <div className="item-card">
+      <img src={producto.img} alt={producto.nombre} className="item-img" />
+      <h3>{producto.nombre}</h3>
+      <p className="item-category">{producto.categoria}</p>
+      <p className="item-price">${producto.precio}</p>
+      <button className="item-btn">Ver Detalles</button>
+    </div>
+  );
 };
+
+export default Item;
